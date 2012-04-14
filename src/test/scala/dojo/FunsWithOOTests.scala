@@ -1,7 +1,7 @@
 package dojo
 
 import items.artifacts.Unicorn
-import items.{Purchasable, TimedItem, User}
+import items.{Item, Purchasable, TimedItem, User}
 import org.scalatest.junit.JUnitRunner
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
@@ -16,7 +16,11 @@ class FunsWithOOTests extends FunSuite with ShouldMatchers{
   }
 
   test("anonymous items should have an id"){
-    assert(false)
+    // By design, this won't compile:
+    //   val item = new Item {}
+    // hence anonymous items *must* have an id:
+
+    val item = new Item { val id = 42 }
   }
 
   // all fashion and house items should be able to be bought for cash deducted from user
