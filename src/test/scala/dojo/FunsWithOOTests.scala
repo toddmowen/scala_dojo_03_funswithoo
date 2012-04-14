@@ -2,7 +2,7 @@ package dojo
 
 import items.artifacts.{MachineGunUnicorn, Unicorn}
 import items.fashion.Hat
-import items.house.Chair
+import items.house.{JukeBox, Chair}
 import items.{Item, Purchasable, TimedItem, User}
 import org.scalatest.junit.JUnitRunner
 import org.junit.runner.RunWith
@@ -57,8 +57,8 @@ class FunsWithOOTests extends FunSuite with ShouldMatchers{
   }
 
   test("JukeBox goes Blah-Blah"){
-    assert(false)
-    //assertTimedItem(Some("Blah-Blah"), jukeBox, delay)
+    val jukeBox = new JukeBox
+    assertTimedItem(Some("Blah-Blah"), jukeBox, 30)
   }
 
   def assertTimedItem(expected: Some[Any], timedItem: TimedItem, delay: Int){
