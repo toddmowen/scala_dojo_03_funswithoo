@@ -1,6 +1,6 @@
 package dojo
 
-import items.artifacts.Unicorn
+import items.artifacts.{MachineGunUnicorn, Unicorn}
 import items.fashion.Hat
 import items.house.Chair
 import items.{Item, Purchasable, TimedItem, User}
@@ -52,8 +52,8 @@ class FunsWithOOTests extends FunSuite with ShouldMatchers{
   // * JukeBox prints Blah-Blah
 
   test("MachineGunUnicorn goes Bam-Bam"){
-    assert(false)
-    //assertTimedItem(Some("Bam-Bam"), machineGunUnicorn, delay)
+    val machineGunUnicorn = new MachineGunUnicorn
+    assertTimedItem(Some("Bam-Bam"), machineGunUnicorn, 60)
   }
 
   test("JukeBox goes Blah-Blah"){
